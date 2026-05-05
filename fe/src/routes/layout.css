@@ -2,6 +2,37 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+:root {
+	--bg: #0a0a0b;
+	--bg2: #111114;
+	--bg3: #18181c;
+	--text: #f0ede8;
+	--text2: #9e9b94;
+	--text3: #5a5855;
+	--accent: #e8500a;
+	--accent2: #ff6a25;
+	--border: rgba(255, 255, 255, 0.07);
+    --black: #0a0a0a;
+	--white: #f5f2ee;
+	--lime: #c8ff00;
+	--cyan: #00d4ff;
+	--mid: #141414;
+	--gray: #6b6864;
+	--border: #1e1e1e;
+	--font-display: 'Bebas Neue', sans-serif;
+	--font-body: 'DM Sans', sans-serif;
+
+	--red: #e53704;
+	--orange: #fd6f00;
+	--yellow: #f0cd13;
+	--accent: #73d62b;
+	--green: #03a337;
+}
+
 body {
-    @apply bg-zinc-500
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 15px;
+	line-height: 1.6;
 }
