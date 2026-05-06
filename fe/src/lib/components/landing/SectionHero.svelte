@@ -7,7 +7,7 @@
 		всіх, кому потрібно «оте, але справжнє».
 	</p>
 	<div class="hero-cta">
-		<button class="btn-primary">Замовити друк</button>
+		<button class="btn primary">Замовити друк</button>
 		<button class="btn-outline">Переглянути роботи</button>
 	</div>
 	<div class="hero-stats">
