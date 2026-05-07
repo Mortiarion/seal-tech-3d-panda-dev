@@ -2,6 +2,8 @@
 	import SectionHeader from '$lib/components/landing/SectionHeader.svelte';
 	import SectionHero from '$lib/components/landing/SectionHero.svelte';
 	import SectionProblemSolution from '$lib/components/landing/SectionProblemSolution.svelte';
+	import SectionServices from '$lib/components/landing/SectionServices.svelte';
+	
 	
 </script>
 
@@ -17,52 +19,7 @@
 	
 		<SectionProblemSolution />
 	
-		<section class="section">
-			<p class="section-label">Послуги</p>
-			<h2>Що ми робимо</h2>
-			<div class="services-grid">
-				<div class="service-card">
-					<div class="service-num">01</div>
-					<div class="service-tag">Виробництво</div>
-					<div class="service-title">Серійний друк</div>
-					<div class="service-text">
-						Малі та середні тиражі з однаковою якістю в кожній деталі. Гнучкі строки,
-						конкурентні ціни.
-					</div>
-					<div class="service-link">Дізнатись більше →</div>
-				</div>
-				<div class="service-card">
-					<div class="service-num">02</div>
-					<div class="service-tag">Custom</div>
-					<div class="service-title">Унікальні вироби</div>
-					<div class="service-text">
-						Декор, сувеніри, cosplay-реквізит, подарунки — допоможемо з ескізом або у
-						створенні 3D-файлу.
-					</div>
-					<div class="service-link">Переглянути роботи →</div>
-				</div>
-				<div class="service-card">
-					<div class="service-num">03</div>
-					<div class="service-tag">AI · Новинка</div>
-					<div class="service-title">Генерація зображень</div>
-					<div class="service-text">
-						Опиши ідею текстом — AI створить зображення. Потім замов друк або збережи як
-						референс.
-					</div>
-					<div class="service-link">Спробувати →</div>
-				</div>
-				<div class="service-card">
-					<div class="service-num">04</div>
-					<div class="service-tag">AI · Новинка</div>
-					<div class="service-title">Зображення → 3D модель</div>
-					<div class="service-text">
-						Завантажуєш фото або згенероване зображення — отримуєш готову 3D-модель для
-						друку.
-					</div>
-					<div class="service-link">Спробувати →</div>
-				</div>
-			</div>
-		</section>
+		<SectionServices />
 	
 		<section class="ai-section">
 			<p class="section-label">Штучний інтелект</p>
@@ -156,66 +113,7 @@
 
 
 	
-
-	
-
-
-	/* SERVICES */
-	.services-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1px;
-		background: var(--border);
-		margin-top: 32px;
-	}
-	.service-card {
-		background: var(--bg2);
-		padding: 32px 28px;
-		position: relative;
-		overflow: hidden;
-		cursor: pointer;
-		transition: background 0.2s;
-	}
-	.service-card:hover {
-		background: var(--bg3);
-	}
-	.service-num {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 64px;
-		color: var(--border);
-		position: absolute;
-		right: 20px;
-		top: 10px;
-		line-height: 1;
-	}
-	.service-tag {
-		font-size: 10px;
-		letter-spacing: 2px;
-		color: var(--accent);
-		font-weight: 600;
-		text-transform: uppercase;
-		margin-bottom: 12px;
-	}
-	.service-title {
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.service-text {
-		font-size: 13px;
-		color: var(--text2);
-		line-height: 1.6;
-		max-width: 280px;
-	}
-	.service-link {
-		font-size: 12px;
-		color: var(--accent);
-		margin-top: 16px;
-		display: inline-block;
-		letter-spacing: 0.5px;
-	}
-
-	/* AI SECTION */
+/* AI SECTION */
 	.ai-section {
 		padding: 64px 32px;
 		border-bottom: 1px solid var(--border);
@@ -281,6 +179,10 @@
 		cursor: pointer;
 		font-family: 'Manrope', sans-serif;
 	}
+	
+
+
+	
 
 	/* CONTACT */
 	.contact-section {
