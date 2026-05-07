@@ -29,12 +29,16 @@
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
+		
+		> .container {
+			padding: 1.25rem ;
+		}
 
 		nav {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 10px 0;
+			/* padding: 10px 0; */
 
 			.nav-links {
 				display: flex;

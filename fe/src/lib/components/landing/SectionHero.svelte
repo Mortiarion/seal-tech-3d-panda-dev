@@ -1,5 +1,5 @@
 <section class="border-bottom">
-	<div class="container py-10">
+	<div class="container">
 		<p class="label">Студія 3D-друку · Київ</p>
 
 		<h1>
@@ -23,13 +23,7 @@
 </section>
 
 <style lang="postcss">
-	.label {
-		font-size: 12px;
-		letter-spacing: var(--letter-spacing-title);
-		color: var(--accent);
-		margin-bottom: 2rem;
-		text-transform: uppercase;
-	}
+	
 
 	.sub {
 		font-size: 18px;

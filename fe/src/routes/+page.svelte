@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import SectionHeader from '$lib/components/landing/SectionHeader.svelte';
 	import SectionHero from '$lib/components/landing/SectionHero.svelte';
+	import SectionProblemSolution from '$lib/components/landing/SectionProblemSolution.svelte';
 	
 </script>
 
@@ -14,35 +15,7 @@
 	<main>
 		<SectionHero />
 	
-		<section class="section">
-			<p class="section-label">Проблема і рішення</p>
-			<h2>Маєш ідею, але не знаєш<br />як її втілити?</h2>
-			<div class="problems">
-				<div class="problem-card">
-					<div class="problem-icon">💡</div>
-					<div class="problem-title">Ідея є, файлу нема</div>
-					<div class="problem-text">
-						Є задум, але немає 3D-моделі? Наш AI генерує модель з твого опису або
-						зображення.
-					</div>
-				</div>
-				<div class="problem-card">
-					<div class="problem-icon">🏭</div>
-					<div class="problem-title">Не хочеш займатись логістикою</div>
-					<div class="problem-text">
-						Завантажуєш модель — ми друкуємо та доставляємо. Без зайвих кроків.
-					</div>
-				</div>
-				<div class="problem-card">
-					<div class="problem-icon">🎯</div>
-					<div class="problem-title">Потрібна унікальна річ</div>
-					<div class="problem-text">
-						Серійні вироби не підходять? Робимо custom речі: від сувенірів до функціональних
-						деталей.
-					</div>
-				</div>
-			</div>
-		</section>
+		<SectionProblemSolution />
 	
 		<section class="section">
 			<p class="section-label">Послуги</p>
@@ -186,58 +159,6 @@
 
 	
 
-	/* PROBLEM SECTION */
-	.section {
-		padding: 64px 32px;
-		border-bottom: 1px solid var(--border);
-	}
-	.section-label {
-		font-size: 11px;
-		letter-spacing: 3px;
-		color: var(--accent);
-		font-weight: 600;
-		text-transform: uppercase;
-		margin-bottom: 16px;
-	}
-	.section h2 {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 44px;
-		letter-spacing: 0.5px;
-		margin-bottom: 32px;
-		line-height: 1.1;
-	}
-	.problems {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 1px;
-		background: var(--border);
-		margin-top: 8px;
-	}
-	.problem-card {
-		background: var(--bg);
-		padding: 28px 24px;
-	}
-	.problem-icon {
-		font-size: 28px;
-		margin-bottom: 14px;
-	}
-	.problem-title {
-		font-weight: 600;
-		font-size: 14px;
-		margin-bottom: 8px;
-		color: var(--text);
-	}
-	.problem-text {
-		font-size: 13px;
-		color: var(--text2);
-		line-height: 1.6;
-	}
-	.arrow {
-		color: var(--accent);
-		font-size: 20px;
-		margin: 20px 32px;
-		text-align: center;
-	}
 
 	/* SERVICES */
 	.services-grid {
