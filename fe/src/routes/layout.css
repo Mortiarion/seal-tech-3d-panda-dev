@@ -41,8 +41,9 @@ body {
 	background: var(--bg-body);
 	color: var(--white);
 	font-family: var(--font-body);
-	line-height: 1.6;
+	line-height: 1;
 	letter-spacing: var(--letter-spacing-text);
+	font-size: 1.125rem;
 }
 
 .container {
@@ -53,7 +54,7 @@ body {
 	padding: 0.75rem 1.25rem;
 	font-weight: 600;
 	cursor: pointer;
-	transition: color 0.3s ease;
+	transition: color 0.3s ease, background-color 0.3s ease;
 
 	&.primary {
 		background-color: var(--accent);
@@ -63,7 +64,8 @@ body {
 
 		@media (hover: hover) {
 			&:hover {
-				background-color: var(--lime);
+				background-color: var(--orange);
+				color: var(--white);
 			}
 		}
 	}
@@ -73,5 +75,13 @@ body {
 			color: var(--gray);
 		}
 	}
+}
+
+.border-bottom::after {
+	content: '';
+	border-bottom: 1px solid var(--border-bottom-section);
+	width: 100%;
+	height: 1px;
+	display: flex;
 }
 

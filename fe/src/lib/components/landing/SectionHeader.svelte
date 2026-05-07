@@ -1,4 +1,4 @@
-<header>
+<header class="border-bottom">
 	<div class="container">
 		<nav>
 			<a href="#" class="logo">
@@ -29,14 +29,6 @@
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
-
-		&::after {
-			content: '';
-			border-bottom: 1px solid var(--border-bottom-section);
-			width: 100%;
-			height: 1px;
-			display: flex;
-		}
 
 		nav {
 			display: flex;
