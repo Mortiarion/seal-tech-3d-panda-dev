@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Model3dIcon from "$lib/icons/Model3dIcon.svelte";
+	// import Model3dIcon from "$lib/icons/Model3dIcon.svelte";
 
 	
 	type TTab = 'overview' | 'orders' | 'models' | 'images' | 'settings';
