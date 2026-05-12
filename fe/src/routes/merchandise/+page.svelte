@@ -179,6 +179,12 @@
 			<div class="filter-item">
 				<div class="filter-label">
 					<div class="filter-dot"></div>
+					ABS
+				</div>
+			</div>
+			<div class="filter-item">
+				<div class="filter-label">
+					<div class="filter-dot"></div>
 					Resin
 				</div>
 			</div>
@@ -235,7 +241,7 @@
 
 		<div class="catalog">
 			<div class="products-grid" class:list={viewMode === 'list'}>
-				{#each products as product (product.id) }
+				{#each products as product (product.id)}
 					<div class="product-card" data-cat={product.category}>
 						<div class="product-thumb">
 							{product.thumb}
@@ -282,6 +288,14 @@
 					</div>
 				{/each}
 			</div>
+		</div>
+
+		<div class="pagination">
+			<button class="page-btn"><i class="ti ti-chevron-left" aria-hidden="true"></i></button>
+			<button class="page-btn active">1</button>
+			<button class="page-btn">2</button>
+			<button class="page-btn">3</button>
+			<button class="page-btn"><i class="ti ti-chevron-right" aria-hidden="true"></i></button>
 		</div>
 	</div>
 </div>
