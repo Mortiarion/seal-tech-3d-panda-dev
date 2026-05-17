@@ -1,16 +1,43 @@
+<script lang='ts'>
+
+	import { Route } from "../../../routes/routing-helper";
+	
+
+	
+</script>
+
 <header class="border-bottom">
 	<div class="container">
 		<nav>
-			<a href="#" class="logo">
-				<img src="/logo.png" width="140" loading="lazy" alt="SealTech3D Logo" />
+			<a href={Route.root} class="logo">
+				<img 
+					src="/logo.png" 
+					width="140" 
+					loading="lazy" 
+					alt="SealTech3D Logo" 
+				/>
 			</a>
 
 			<ul class="nav-links">
-				<li><a href="#">Головна</a></li>
-				<li><a href="#">Про нас</a></li>
-				<li><a href="#">Товари</a></li>
-				<li><a href="#">Генерація</a></li>
-				<li><a href="#">Контакти</a></li>
+				<!-- <li>
+					<a href="#">Головна</a>
+				</li> -->
+
+				<li>
+					<a href="#">Про нас</a>
+				</li>
+
+				<li>
+					<a href="#">Товари</a>
+				</li>
+
+				<li>
+					<a href="#">Генерація</a>
+				</li>
+
+				<li>
+					<a href="#">Контакти</a>
+				</li>
 			</ul>
 
 			<div class="nav-right gap-5">
