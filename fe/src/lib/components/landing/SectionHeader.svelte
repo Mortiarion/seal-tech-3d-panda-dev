@@ -48,6 +48,7 @@
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
+		/* transition: background-color 1s, color 1s; */
 		
 		> .container {
 			padding: 1.25rem ;
@@ -66,14 +67,13 @@
 
 				
 				& a {
-					/* color: var(--gray); */
-					/* font-size: 1.25rem; */
-					/* font-weight: 900; */
-					/* letter-spacing: var(--letter-spacing-text); */
-					/* transition: color 0.3s; */
+					color: var(--white);
+					font-size: 1.25rem;
+					font-weight: 900;
+					transition: color 0.3s;
 
 					&:hover {
-						/* color: var(--white); */
+						color: var(--gray);
 					}
 				}
 			}
@@ -82,20 +82,6 @@
 				display: flex;
 				align-items: center;
 				gap: 1.25rem;
-				
-				.language {
-					/* background-color: var(--o); */
-				}
-
-				.registration {
-					/* background-color: var(--accent); */
-					/* color: var(--black); */
-					/* border: 1px solid var(--accent); */
-				}
-
-				.theme {
-					/* background-color: var(--red); */
-				}
 			}
 		}
 	}

@@ -1,76 +1,99 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 
-	let isLight = $state(false);
+	type TTheme = 'light' | 'dark';
 
-	if (browser) {
-		isLight = document.body.classList.contains('light');
+	let theme = $state<TTheme>('dark');
+
+	onMount(() => {
+		const savedTheme = (localStorage.getItem('theme') as TTheme) ?? 'dark';
+
+		setTheme(savedTheme);
+	});
+
+	function setTheme(newTheme: TTheme) {
+		theme = newTheme;
+
+		document.body.dataset.theme = newTheme;
+
+		localStorage.setItem('theme', newTheme);
 	}
 
 	function toggleTheme() {
-		isLight = !isLight;
-
-		document.body.classList.toggle('light', !isLight);
+		setTheme(theme === 'dark' ? 'light' : 'dark');
 	}
 
-	const toggleId = crypto.randomUUID();
+	// const toggleId = crypto.randomUUID();
 
-	const clipMainId = `toggles-dev-within-main-${toggleId}`;
+	// const clipMainId = `toggles-dev-within-main-${toggleId}`;
 </script>
 
 <button
-	type='button'
-	title='Toggle theme'
-	aria-label='Toggle theme'
-	class='btn'
-	aria-pressed={ isLight }
-	onclick={ toggleTheme }
+	type="button"
+	title="Toggle theme"
+	aria-label="Toggle theme"
+	class="btn"
+	aria-pressed={theme === 'light'}
+	class:light={theme === 'light'}
+	onclick={toggleTheme}
 >
-	<svg
-		viewBox="0 0 32 32"
-		aria-hidden="true"
-		fill="currentColor"
-	>
-		<defs>
-			<clipPath id={clipMainId}>
-				<path d="M0 0h32v32h-32ZM6 16A1 1 0 0026 16 1 1 0 006 16" />
-			</clipPath>
-		</defs>
-
-		<g clip-path={`url(#${clipMainId})`}>
-			<path
-				d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4zM16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1z"
-				class="d1"
-			/>
-		</g>
-
-		<path
-			d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4zm0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1c3.4 0 6.1 2.9 6.1 6.2s-2.7 6.1-6.1 6.1z"
-			class="d2"
-		/>
-
-		<path
-			d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z"
-			class="d3"
-		/>
-	</svg>
+	
+	{#if theme === 'light'}
+		<svg
+			// xmlns="http://www.w3.org/2000/svg"
+			// width="24"
+			// height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			// stroke-linejoin="round"
+			// class="lucide lucide-sun h-6 w-6"
+		>
+			<circle cx="12" cy="12" r="4"></circle>
+			<path d="M12 2v2"></path>
+			<path d="M12 20v2"></path>
+			<path d="m4.93 4.93 1.41 1.41"></path>
+			<path d="m17.66 17.66 1.41 1.41"></path>
+			<path d="M2 12h2"></path>
+			<path d="M20 12h2"></path>
+			<path d="m6.34 17.66-1.41 1.41"></path>
+			<path d="m19.07 4.93-1.41 1.41"></path>
+		</svg>
+	{:else}
+		<svg
+			// xmlns="http://www.w3.org/2000/svg"
+			// width="24"/
+			// height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			// stroke-linecap="round"
+			// stroke-linejoin="round"
+		>
+			<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+		</svg>
+	{/if}
 </button>
 
-<style lang='postcss'>
+<style lang="postcss">
 	button {
 		svg {
-			width: 2rem;
+			width: 3rem;
+			/* height: 4rem; */
 			transition: transform 1s cubic-bezier(0, 0, 0, 1.25);
-			
+
 			&:focus-visible {
 				outline: 2px solid currentColor;
 				outline-offset: 4px;
 			}
 
-			&:hover  {
+			&:hover {
 				transform: rotate(250deg);
 			}
-	
+
 			&:active {
 				transform: scale(0.8);
 			}
@@ -80,19 +103,24 @@
 			.d3 {
 				transform-origin: center;
 				will-change: transform;
-		
+
 				transition:
-					transform var(--toggles-within-duration)
-					cubic-bezier(0, 0, 0, 1.25),
+					transform var(--toggles-within-duration) cubic-bezier(0, 0, 0, 1.25),
 					opacity var(--toggles-within-duration);
 			}
 
-			.d3 {
-				/* opacity: 0; */
-				/* transform: translate3d(0, 0, 0) scale(0.8); */
+			& .d1 {
+				transform: scale(0.65);
+			}
+
+			& .d2 {
+				transform: scale(1.5);
+			}
+
+			& .d3 {
+				opacity: 1;
+				transform: translate3d(3px, -3px, 0) scale(1.2);
 			}
 		}
 	}
-
-	
 </style>
