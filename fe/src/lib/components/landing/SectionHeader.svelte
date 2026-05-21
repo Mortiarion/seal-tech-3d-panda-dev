@@ -1,15 +1,14 @@
 <script lang='ts'>
+	import { resolve } from "$app/paths";
 
-	import { Route } from "../../../routes/routing-helper";
-	
-
-	
+	import { Route } from "$lib/routing-helper";
+	import ThemesToggle from "../themes/ThemesToggle.svelte";
 </script>
 
 <header class="border-bottom">
 	<div class="container">
 		<nav>
-			<a href={Route.root} class="logo">
+			<a href={ resolve(Route.root) } class="logo">
 				<img 
 					src="/logo.png" 
 					width="140" 
@@ -19,14 +18,6 @@
 			</a>
 
 			<ul class="nav-links">
-				<!-- <li>
-					<a href="#">Головна</a>
-				</li> -->
-
-				<li>
-					<a href="#">Про нас</a>
-				</li>
-
 				<li>
 					<a href="#">Товари</a>
 				</li>
@@ -41,9 +32,10 @@
 			</ul>
 
 			<div class="nav-right gap-5">
-				<button class="btn language">UA / EN</button>
+				<button class="btn language">UA</button>
+				<ThemesToggle />
 				<button class="btn registration">Увійти</button>
-				<button class="btn theme">Тема</button>
+				<!-- <button class="btn theme">Тема</button> -->
 			</div>
 		</nav>
 	</div>
@@ -70,18 +62,18 @@
 			.nav-links {
 				display: flex;
 				gap: 1.25rem;
-				list-style: none;
+				/* list-style: none; */
 
 				
 				& a {
-					color: var(--gray);
-					font-size: 1.25rem;
-					font-weight: 900;
-					letter-spacing: var(--letter-spacing-text);
-					transition: color 0.3s;
+					/* color: var(--gray); */
+					/* font-size: 1.25rem; */
+					/* font-weight: 900; */
+					/* letter-spacing: var(--letter-spacing-text); */
+					/* transition: color 0.3s; */
 
 					&:hover {
-						color: var(--white);
+						/* color: var(--white); */
 					}
 				}
 			}

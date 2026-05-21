@@ -53,11 +53,43 @@ body {
 	line-height: 1;
 	letter-spacing: var(--letter-spacing-text);
 	font-size: 1.125rem;
+	transition: all 1s;
+
+	&.light {
+		background-color: var(--white);
+		color: var(--black);
+	
+		
+		& .d1 {
+			transform: scale(0.65);
+		}
+		
+		& .d2 {
+			transform: scale(1.5);
+		}
+		
+		& .d3 {
+			opacity: 1;
+			transform: translate3d(3px, -3px, 0) scale(1.2);
+		}
+	
+		header {
+			background-color: var(--white);
+			color: var(--black);
+
+			nav {
+				/* color: var(--gray); */
+			}
+		}
+	}
 }
 
 .container {
 	@apply mx-auto px-5 py-10;
 }
+
+
+
 
 .label {
 	font-size: 0.825rem;

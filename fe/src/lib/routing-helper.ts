@@ -8,3 +8,5 @@ export const Route = {
     }
 } as const;
 
+export type RoutePath = (typeof Route)[keyof typeof Route];
+export type RouteKey = keyof typeof Route;
