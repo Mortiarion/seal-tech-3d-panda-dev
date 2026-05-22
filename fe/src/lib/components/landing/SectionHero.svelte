@@ -1,6 +1,8 @@
 <section class="border-bottom">
 	<div class="container">
-		<p class="label">Студія 3D-друку · Київ</p>
+		<p class="main-section-label">
+			Студія 3D-друку
+		</p>
 
 		<h1>
 			Де
@@ -18,13 +20,13 @@
 			інженерів та всіх, кому потрібно «оте, але справжнє».
 		</p>
 
-		<button class="btn primary"> Замовити друк </button>
+		<button class="btn primary"> 
+			Замовити друк 
+		</button>
 	</div>
 </section>
 
 <style lang="postcss">
-	
-
 	.sub {
 		font-size: 18px;
 		max-width: 460px;
@@ -41,7 +43,7 @@
 
 		span {
 			&:nth-child(1) {
-				color: var(--accent);
+				color: var(--accent-green);
 			}
 			&:nth-child(2) {
 				color: var(--orange);

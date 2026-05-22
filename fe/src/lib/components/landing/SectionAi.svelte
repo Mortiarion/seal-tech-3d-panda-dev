@@ -1,6 +1,6 @@
 <section class="ai-section border-bottom">
     <div class="container">
-        <p class="label">
+        <p class="main-section-label">
             Штучний інтелект
         </p>
 
@@ -87,8 +87,8 @@
 	}
 	.ai-badge {
 		display: inline-block;
-		background: rgba(232, 80, 10, 0.15);
-		color: var(--accent);
+		background: var(--bg3);
+		color: var(--orange);
 		font-size: 10px;
 		letter-spacing: 2px;
 		padding: 4px 10px;
@@ -125,8 +125,8 @@
 		outline: none;
 	}
 	.ai-btn {
-		background: var(--accent);
-		/* color: #fff; */
+		background: var(--accent-orange);
+		/* color: var; */
 		border: none;
 		padding: 6px 14px;
 		font-size: 12px;

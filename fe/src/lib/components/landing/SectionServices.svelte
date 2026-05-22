@@ -1,6 +1,6 @@
 <section class="border-bottom">
     <div class="container">
-        <p class="label">
+        <p class="main-section-label">
             Послуги
         </p>
 

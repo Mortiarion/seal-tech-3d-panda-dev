@@ -3,7 +3,7 @@
         <div class="contact-section">
 
             <div>
-                <p class="section-label" style="margin-bottom:12px">Контакти</p>
+                <p class="main-section-label" >Контакти</p>
                 <div class="contact-title">Поговоримо про<br />твій <span>проєкт</span></div>
                 <p style="color:var(--text2);font-size:14px;max-width:320px">
                     Без зайвої бюрократії. Розкажи що потрібно — відповімо швидко.
@@ -27,7 +27,7 @@
                 <input class="form-input" placeholder="Ваше ім'я" />
                 <input class="form-input" placeholder="Email або Telegram" />
                 <textarea class="form-input" placeholder="Опишіть ваш проєкт..."></textarea>
-                <button class="btn-primary" style="width:100%">Надіслати запит</button>
+                <button class="btn primary" style="width:100%">Надіслати запит</button>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
 		margin-bottom: 16px;
 	}
 	.contact-title span {
-		color: var(--accent);
+		color: var(--accent-green);
 	}
 	.contact-info {
 		display: flex;
@@ -68,7 +68,7 @@
 	.contact-dot {
 		width: 6px;
 		height: 6px;
-		background: var(--accent);
+		background: var(--accent-orange2);
 		/* flex-shrink: 0; */
 	}
 	.contact-form {
@@ -77,24 +77,24 @@
 		gap: 12px;
 	}
 	.form-input {
-		/* background: var(--bg2); */
+		background: var(--bg2);
 		border: 1px solid var(--border);
 		color: var(--gray);
 		padding: 12px 14px;
 		font-size: 14px;
 		/* font-family: 'Manrope', sans-serif; */
-		/* outline: none; */
+		outline: none;
 		width: 100%;
 		transition: border-color 0.2s;
 	}
 	.form-input:focus {
-		border-color: var(--accent);
+		border-color: var(--accent-green);
 	}
 	.form-input::placeholder {
 		color: var(--gray);
 	}
 	textarea.form-input {
 		height: 100px;
-		/* resize: none; */
+		resize: none;
 	}
 </style>

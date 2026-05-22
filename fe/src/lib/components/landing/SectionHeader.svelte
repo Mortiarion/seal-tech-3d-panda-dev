@@ -48,7 +48,6 @@
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
-		/* transition: background-color 1s, color 1s; */
 		
 		> .container {
 			padding: 1.25rem ;
@@ -58,16 +57,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			/* padding: 10px 0; */
 
 			.nav-links {
 				display: flex;
 				gap: 1.25rem;
-				/* list-style: none; */
 
 				
 				& a {
-					color: var(--white);
 					font-size: 1.25rem;
 					font-weight: 900;
 					transition: color 0.3s;

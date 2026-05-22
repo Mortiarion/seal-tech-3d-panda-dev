@@ -30,15 +30,15 @@
 
 <button
 	type="button"
-	title="Toggle theme"
-	aria-label="Toggle theme"
+	title={`Toggle theme ${ theme === 'dark' ? 'light' : 'dark' }`}
+	aria-label={`Toggle theme ${ theme === 'dark' ? 'light' : 'dark' }`}
 	class="btn"
-	aria-pressed={theme === 'light'}
-	class:light={theme === 'light'}
+	aria-pressed={theme === 'dark'}
+	class:light={theme === 'dark'}
 	onclick={toggleTheme}
 >
 	
-	{#if theme === 'light'}
+	{#if theme === 'dark'}
 		<svg
 			// xmlns="http://www.w3.org/2000/svg"
 			// width="24"
@@ -81,9 +81,8 @@
 <style lang="postcss">
 	button {
 		svg {
-			width: 3rem;
-			/* height: 4rem; */
-			transition: transform 1s cubic-bezier(0, 0, 0, 1.25);
+			width: 2rem;
+			transition: transform 1s;
 
 			&:focus-visible {
 				outline: 2px solid currentColor;
@@ -96,30 +95,6 @@
 
 			&:active {
 				transform: scale(0.8);
-			}
-
-			.d1,
-			.d2,
-			.d3 {
-				transform-origin: center;
-				will-change: transform;
-
-				transition:
-					transform var(--toggles-within-duration) cubic-bezier(0, 0, 0, 1.25),
-					opacity var(--toggles-within-duration);
-			}
-
-			& .d1 {
-				transform: scale(0.65);
-			}
-
-			& .d2 {
-				transform: scale(1.5);
-			}
-
-			& .d3 {
-				opacity: 1;
-				transform: translate3d(3px, -3px, 0) scale(1.2);
 			}
 		}
 	}
