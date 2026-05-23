@@ -2,6 +2,7 @@
 	import { resolve } from "$app/paths";
 
 	import { Route } from "$lib/routing-helper";
+	import LanguageSwitcher from "../languages/LanguageSwitcher.svelte";
 	import ThemesToggle from "../themes/ThemesToggle.svelte";
 </script>
 
@@ -19,23 +20,31 @@
 
 			<ul class="nav-links">
 				<li>
-					<a href="#">Товари</a>
+					<a href={ resolve(Route.merchandise) }>
+						Товари
+					</a>
 				</li>
 
 				<li>
-					<a href="#">Генерація</a>
+					<a href={ resolve(Route.aiGeneration) }>
+						Генерація ШІ
+					</a>
 				</li>
 
 				<li>
-					<a href="#">Контакти</a>
+					<a href={ resolve(`${Route.root}#contacts`) }>Контакти</a>
 				</li>
 			</ul>
 
 			<div class="nav-right gap-5">
-				<button class="btn language">UA</button>
+				<!-- <button class="btn language">UA</button> -->
+				<LanguageSwitcher />
+
 				<ThemesToggle />
-				<button class="btn registration">Увійти</button>
-				<!-- <button class="btn theme">Тема</button> -->
+
+				<a href={ resolve(Route.auth.login) } class="btn registration">
+					Увійти
+				</a>
 			</div>
 		</nav>
 	</div>

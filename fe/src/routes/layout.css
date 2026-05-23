@@ -46,7 +46,9 @@
 	--green: #03a337;
 }
 
-
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	background: var(--bg-body);

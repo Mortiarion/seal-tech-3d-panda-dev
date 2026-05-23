@@ -1,4 +1,4 @@
-<section class=" border-bottom">
+<section class=" border-bottom" id="contacts">
     <div class="container">
         <div class="contact-section">
 
