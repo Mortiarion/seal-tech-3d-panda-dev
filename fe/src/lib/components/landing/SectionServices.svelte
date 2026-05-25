@@ -6,46 +6,95 @@
 
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-num">01</div>
-                <div class="service-tag">Виробництво</div>
-                <div class="service-title">Серійний друк</div>
+                <div class="service-num">
+					01
+				</div>
+
+                <div class="service-tag">
+					Виробництво
+				</div>
+
+                <div class="service-title">
+					Серійний друк
+				</div>
+
                 <div class="service-text">
-                    Малі та середні тиражі з однаковою якістю в кожній деталі. Гнучкі строки,
-                    конкурентні ціни.
+                    Малі та середні тиражі з однаковою якістю в кожній деталі. 
+					Гнучкі строки, конкурентні ціни.
                 </div>
-                <div class="service-link">Дізнатись більше →</div>
+
+                <div class="service-link">
+					Дізнатись більше →
+				</div>
             </div>
 
             <div class="service-card">
-                <div class="service-num">02</div>
-                <div class="service-tag">Custom</div>
-                <div class="service-title">Унікальні вироби</div>
+                <div class="service-num">
+					02
+				</div>
+
+                <div class="service-tag">
+					Custom
+				</div>
+
+                <div class="service-title">
+					Унікальні вироби
+				</div>
+
                 <div class="service-text">
-                    Декор, сувеніри, cosplay-реквізит, подарунки — допоможемо з ескізом або у створенні
-                    3D-файлу.
+                    Декор, сувеніри, cosplay-реквізит, подарунки — 
+					допоможемо з ескізом або у створенні 3D-файлу.
                 </div>
-                <div class="service-link">Переглянути роботи →</div>
+
+                <div class="service-link">
+					Переглянути роботи →
+				</div>
             </div>
 
             <div class="service-card">
-                <div class="service-num">03</div>
-                <div class="service-tag">AI · Новинка</div>
-                <div class="service-title">Генерація зображень</div>
+                <div class="service-num">
+					03
+				</div>
+				
+                <div class="service-tag">
+					AI · Новинка
+				</div>
+
+                <div class="service-title">
+					Генерація зображень
+				</div>
+
                 <div class="service-text">
-                    Опиши ідею текстом — AI створить зображення. Потім замов друк або збережи як
-                    референс.
+                    Опиши ідею текстом — AI створить зображення. 
+					Потім замов друк або збережи як референс.
                 </div>
-                <div class="service-link">Спробувати →</div>
+
+                <div class="service-link">
+					Спробувати →
+				</div>
             </div>
 
             <div class="service-card">
-                <div class="service-num">04</div>
-                <div class="service-tag">AI · Новинка</div>
-                <div class="service-title">Зображення → 3D модель</div>
+                <div class="service-num">
+					04
+				</div>
+
+                <div class="service-tag">
+					AI · Новинка
+				</div>
+
+                <div class="service-title">
+					Зображення → 3D модель
+				</div>
+
                 <div class="service-text">
-                    Завантажуєш фото або згенероване зображення — отримуєш готову 3D-модель для друку.
+                    Завантажуєш фото або згенероване зображення — отримуєш готову 
+					3D-модель для друку.
                 </div>
-                <div class="service-link">Спробувати →</div>
+
+                <div class="service-link">
+					Спробувати →
+				</div>
             </div>
 
         </div>
@@ -66,7 +115,7 @@
 		position: relative;
 		overflow: hidden;
 		cursor: pointer;
-		transition: background 0.2s;
+		transition: background .3s;
 	}
 	.service-card:hover {
 		background: var(--black);

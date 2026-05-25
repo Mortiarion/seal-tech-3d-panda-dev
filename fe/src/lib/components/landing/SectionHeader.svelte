@@ -2,8 +2,8 @@
 	import { resolve } from "$app/paths";
 
 	import { Route } from "$lib/routing-helper";
-	import LanguageSwitcher from "../languages/LanguageSwitcher.svelte";
-	import ThemesToggle from "../themes/ThemesToggle.svelte";
+	import LanguageSwitcher from "$lib/components/languages/LanguageSwitcher.svelte";
+	import ThemesToggle from "$lib/components/themes/ThemesToggle.svelte";
 </script>
 
 <header class="border-bottom">
@@ -32,12 +32,13 @@
 				</li>
 
 				<li>
-					<a href={ resolve(`${Route.root}#contacts`) }>Контакти</a>
+					<a href={ resolve(`${Route.root}#contacts`) }>
+						Контакти
+					</a>
 				</li>
 			</ul>
 
 			<div class="nav-right gap-5">
-				<!-- <button class="btn language">UA</button> -->
 				<LanguageSwitcher />
 
 				<ThemesToggle />

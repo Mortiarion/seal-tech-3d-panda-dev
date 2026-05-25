@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { clickOutside } from "../utils/clickOutSide";
+	import { clickOutside } from "../../actions/clickOutSide";
 
     let isLang = $state(false);
 
@@ -8,7 +8,7 @@
     }
 </script>
 
-<div class="lang-menu" use:clickOutside onclickOutside={()=> (isLang = false)}>
+<div class="lang-menu" use:clickOutside onclickOutside={ ()=> (isLang = false) }>
     <button
         onclick={ toggleLang }
         class="lang-btn"
@@ -19,22 +19,20 @@
     >
         УКР
     </button>
-    
-    <!-- {#if isLang} -->
-        <ul class="lang-drop" class:open={ isLang }>
-            <li>
-                <button>
-                    ENG
-                </button>
-            </li>
 
-            <li>
-                <button>
-                    УКР
-                </button>
-            </li>
-        </ul>
-    <!-- {/if} -->
+    <ul class="lang-drop" class:open={ isLang }>
+        <li>
+            <button>
+                ENG
+            </button>
+        </li>
+
+        <li>
+            <button>
+                УКР
+            </button>
+        </li>
+    </ul>
 </div>
 
 <style lang='postcss'>

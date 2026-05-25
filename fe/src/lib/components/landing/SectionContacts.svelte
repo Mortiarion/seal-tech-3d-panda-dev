@@ -1,98 +1,165 @@
-<section class=" border-bottom" id="contacts">
+<section class="border-bottom" id="contacts">
     <div class="container">
         <div class="contact-section">
-
             <div>
-                <p class="main-section-label" >Контакти</p>
-                <div class="contact-title">Поговоримо про<br />твій <span>проєкт</span></div>
-                <p style="color:var(--text2);font-size:14px;max-width:320px">
-                    Без зайвої бюрократії. Розкажи що потрібно — відповімо швидко.
+                <p class="main-section-label">
+					Контакти
+				</p>
+
+                <div class="contact-title">
+					Поговоримо про <br />
+					
+					<span>
+						твій проєкт
+					</span>
+				</div>
+
+                <p class='contact-subtitle'>
+                    Розкажи нам про свої ідеї, а ми допоможемо втілити їх у життя. 
+					Ми відкриті до нових проєктів та співпраці!
                 </p>
+
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-dot"></div>
-                        +380 66 803 8198
+
+						<a href="tell:+380668038198" target="_blank">
+							+380 66 803 8198
+						</a>
                     </div>
+					
                     <div class="contact-item">
                         <div class="contact-dot"></div>
-                        @SealTech3D в Telegram
+
+                        <a href="https://t.me/SealTech3D" target="_blank">
+                            @SealTech3D в Telegram
+                        </a>
                     </div>
+
                     <div class="contact-item">
                         <div class="contact-dot"></div>
-                        sealtech3d@gmail.com
+
+                        <a href="mailto:sealtech3d@gmail.com" target="_blank">
+                            sealtech3d@gmail.com
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
-                <input class="form-input" placeholder="Ваше ім'я" />
-                <input class="form-input" placeholder="Email або Telegram" />
-                <textarea class="form-input" placeholder="Опишіть ваш проєкт..."></textarea>
-                <button class="btn primary" style="width:100%">Надіслати запит</button>
-            </div>
+
+            <form class="contact-form" action='' name='contact' method='POST'>
+                <input 
+					class="form-input" 
+					placeholder="Ваше ім'я" 
+					id="name"
+					name="name" 
+					required
+					minlength="4"
+					maxlength="8"
+					size="10"
+				/>
+
+                <input 
+					class="form-input" 
+					placeholder="Email або Telegram" 
+					id="email"
+					name="email"
+					required
+					minlength="4"
+					maxlength="8"
+					size="10"
+				/>
+
+                <textarea 
+					class="form-input" 
+					placeholder="Опишіть ваш проєкт..." 
+					id="project"
+					name="project"
+					autocomplete='on' // тут якась байда тре буде розібратись як це говно працює ато браузер ругається
+				></textarea>
+
+                <button class="btn primary" style="width:100%">
+					Надіслати запит
+				</button>
+            </form>
         </div>
 
     </div>
 </section>
 
 <style lang="postcss">
-	/* CONTACT */
 	.contact-section {
-		padding: 64px 32px;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 48px;
-		align-items: start;
+		gap: 3rem;
 	}
+
 	.contact-title {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 52px;
-		line-height: 1;
-		margin-bottom: 16px;
+		font-family: var(--font-display);
+		font-size: 3rem;
+		margin-bottom: 1rem;
+
+		span {
+			color: var(--accent-green);
+		}
 	}
-	.contact-title span {
-		color: var(--accent-green);
+
+	.contact-subtitle {
+		color: var(--text2);
+		font-size: 1rem;
+		max-width: 320px;
+		line-height: 1.5;
 	}
+
 	.contact-info {
 		display: flex;
 		flex-direction: column;
-		gap: 14px;
-		margin-top: 8px;
+		gap: 1rem;
+		margin-top: 2rem;
 	}
+
 	.contact-item {
 		display: flex;
 		align-items: center;
-		gap: 12px;
-		font-size: 14px;
-		/* color: var(--white); */
+		gap: 1rem;
 	}
+	
 	.contact-dot {
 		width: 6px;
 		height: 6px;
 		background: var(--accent-orange2);
-		/* flex-shrink: 0; */
 	}
+
 	.contact-form {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 1rem;
 	}
+
 	.form-input {
 		background: var(--bg2);
 		border: 1px solid var(--border);
 		color: var(--gray);
 		padding: 12px 14px;
 		font-size: 14px;
-		/* font-family: 'Manrope', sans-serif; */
+		transition: border-color 1.3s, box-shadow 1.3s, scale 1.3s;
 		outline: none;
-		width: 100%;
-		transition: border-color 0.2s;
+		box-shadow: none;
+		
+		&:active {
+			border-color: var(--accent-green);
+			box-shadow: var(--accent-green) 0px 0px 30px, var(--accent-orange) 0px 0px 30px;
+			scale: 1.02;
+		}
+		
+		&:focus {
+			box-shadow: var(--accent-green) 0px 0px 30px, var(--accent-orange) 0px 0px 30px;
+		}
+
+		&::placeholder {
+			color: var(--gray);
+		}
 	}
-	.form-input:focus {
-		border-color: var(--accent-green);
-	}
-	.form-input::placeholder {
-		color: var(--gray);
-	}
+
 	textarea.form-input {
 		height: 100px;
 		resize: none;
