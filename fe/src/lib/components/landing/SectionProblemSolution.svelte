@@ -5,52 +5,52 @@
             Проблема і рішення
         </p>
 
-        <h2>
+        <h3>
             Маєш ідею, але не знаєш
             як її втілити?
-        </h2>
+        </h3>
 
         <div class="problems">
-            <div class="problem-card">
-                <div class="problem-icon">
+            <div class="card">
+                <div class="icon">
                     💡
                 </div>
 
-                <div class="problem-title">
+                <div class="title">
                     Ідея є, файлу нема
                 </div>
 
-                <div class="problem-text">
+                <div class="text">
                     Є задум, але немає 3D-моделі? Наш AI генерує модель з 
                     твого опису або зображення.
                 </div>
             </div>
 
-            <div class="problem-card">
-                <div class="problem-icon">
+            <div class="card">
+                <div class="icon">
                     🏭
                 </div>
 
-                <div class="problem-title">
+                <div class="title">
                     Не хочеш займатись логістикою
                 </div>
 
-                <div class="problem-text">
+                <div class="text">
                     Завантажуєш модель — ми друкуємо та доставляємо. 
                     Без зайвих кроків.
                 </div>
             </div>
 
-            <div class="problem-card">
-                <div class="problem-icon">
+            <div class="card">
+                <div class="icon">
                     🎯
                 </div>
 
-                <div class="problem-title">
+                <div class="title">
                     Потрібна унікальна річ
                 </div>
 
-                <div class="problem-text">
+                <div class="text">
                     Серійні вироби не підходять? Робимо custom речі: 
                     від сувенірів до функціональних деталей.
                 </div>
@@ -60,7 +60,7 @@
 </section>
 
 <style lang='postcss'>
-    h2 {
+    h3 {
 		font-size: 3rem;
 		margin-bottom: 2rem;
 	}
@@ -70,25 +70,25 @@
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1px;
 		background: var(--border);
-	}
 
-	.problem-card {
-		background: var(--mid);
-		padding: 2rem;
-	}
+        .card {
+            background: var(--mid);
+            padding: 2rem;
 
-	.problem-icon {
-		font-size: 2rem;
-		margin-bottom: 1.25rem;
-	}
-
-	.problem-title {
-		font-weight: 600;
-		margin-bottom: 1.25rem;
-	}
-    
-	.problem-text {
-		font-size: 14px;
-		line-height: 1.4;
+            .icon {
+                font-size: 2rem;
+                margin-bottom: 1.25rem;
+            }
+        
+            .title {
+                font-weight: 600;
+                margin-bottom: 1.25rem;
+            }
+            
+            .text {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
 	}
 </style>

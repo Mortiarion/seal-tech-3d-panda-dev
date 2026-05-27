@@ -1,3 +1,9 @@
+<script lang='ts'>
+	import EmailIcon from "$lib/icons/EmailIcon.svelte";
+	import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
+	import TelegramIcon from "$lib/icons/TelegramIcon.svelte";
+</script>
+
 <section class="border-bottom" id="contacts">
     <div class="container">
         <div class="contact-section">
@@ -19,43 +25,47 @@
 					Ми відкриті до нових проєктів та співпраці!
                 </p>
 
-                <div class="info">
-                    <div class="item">
-                        <div class="dot"></div>
+                <nav class="info">
 
-						<a 
-							href="tell:+380668038198" 
-							target="_blank"
-							title='Поговоримо?'
-						>
+					<a 
+						href="tell:+380668038198" 
+						target="_blank"
+						title='Поговоримо?'
+					>
+						<PhoneIcon />
+
+						<p>
 							+380 66 803 8198
-						</a>
-                    </div>
-					
-                    <div class="item">
-                        <div class="dot"></div>
+						</p>
+					</a>
+				
 
-                        <a 
-							href="https://t.me/SealTech3D" 
-							target="_blank"
-							title='Нашишеш нам?'
-						>
-                            @SealTech3D в Telegram
-                        </a>
-                    </div>
+					<a 
+						href="https://t.me/SealTech3D" 
+						target="_blank"
+						title='Нашишеш нам?'
+					>
 
-                    <div class="item">
-                        <div class="dot"></div>
+						<TelegramIcon />
 
-                        <a 
-							href="mailto:sealtech3d@gmail.com" 
-							target="_blank"
-							title='Напишеш на пошту?'
-						>
-                            sealtech3d@gmail.com
-                        </a>
-                    </div>
-                </div>
+						<p>
+							@SealTech3D в Telegram
+						</p>
+					</a>
+
+
+					<a 
+						href="mailto:sealtech3d@gmail.com" 
+						target="_blank"
+						title='Напишеш на пошту?'
+					>
+						<EmailIcon />
+
+						<p>
+							sealtech3d@gmail.com
+						</p>
+					</a>
+                </nav>
             </div>
 
             <form class="contact-form" action='' name='contact' method='POST'>
@@ -96,11 +106,24 @@
 				</button>
             </form>
         </div>
-
     </div>
 </section>
 
 <style lang="postcss">
+	#contacts {
+		position: relative;
+		&::before {
+
+		    content: "";
+			position: absolute;
+			inset: 0;
+			background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+			background-size: 60px 60px;
+			opacity: .35;
+			pointer-events: none;
+		}
+	}
+	
 	.contact-section {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -121,22 +144,16 @@
 			font-size: 1rem;
 			max-width: 320px;
 			line-height: 1.5;
+			margin-bottom: 2rem;
 		}
 	
-		.info {
-			margin-top: 2rem;
-
-			.item {
+		nav {
+			a {
 				display: flex;
-				align-items: center;
 				gap: 1rem;
+				align-items: center;
 			}
-
-			.dot {
-				width: 6px;
-				height: 6px;
-				background: var(--accent-orange2);
-			}
+			
 		}
 	
 		form {

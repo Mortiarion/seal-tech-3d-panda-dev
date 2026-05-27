@@ -146,3 +146,8 @@ body {
 	display: flex;
 }
 
+.contact-nav-icon {
+	border: 1px solid var(--border);
+	padding: 0.5rem;
+}
+
