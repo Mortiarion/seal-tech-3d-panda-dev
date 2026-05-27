@@ -1,3 +1,7 @@
+<script lang='ts'>
+	import ArrowRightIcon from "$lib/icons/ArrowRightIcon.svelte";
+</script>
+
 <section class="border-bottom">
     <div class="container">
         <p class="main-section-label">
@@ -6,95 +10,101 @@
 
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-num">
+                <span class="num">
 					01
-				</div>
+				</span>
 
-                <div class="service-tag">
+                <div class="tag">
 					Виробництво
 				</div>
 
-                <div class="service-title">
+                <h4 class="title">
 					Серійний друк
-				</div>
+				</h4>
 
-                <div class="service-text">
+                <div class="text">
                     Малі та середні тиражі з однаковою якістю в кожній деталі. 
 					Гнучкі строки, конкурентні ціни.
                 </div>
 
-                <div class="service-link">
-					Дізнатись більше →
-				</div>
+                <a href="#" class="link">
+					Дізнатись більше
+					<ArrowRightIcon />
+				</a>
             </div>
 
             <div class="service-card">
-                <div class="service-num">
+                <span class="num">
 					02
-				</div>
+				</span>
 
-                <div class="service-tag">
+                <div class="tag">
 					Custom
 				</div>
 
-                <div class="service-title">
+                <h4 class="title">
 					Унікальні вироби
-				</div>
+				</h4>
 
-                <div class="service-text">
+                <div class="text">
                     Декор, сувеніри, cosplay-реквізит, подарунки — 
 					допоможемо з ескізом або у створенні 3D-файлу.
                 </div>
 
-                <div class="service-link">
-					Переглянути роботи →
-				</div>
+                <a href="#" class="link">
+					Переглянути роботи 
+					<ArrowRightIcon />
+				</a>
             </div>
 
             <div class="service-card">
-                <div class="service-num">
+                <span class="num">
 					03
-				</div>
+				</span>
 				
-                <div class="service-tag">
-					AI · Новинка
+                <div class="tag">
+					AI · допомога
 				</div>
 
-                <div class="service-title">
+                <h4 class="title">
 					Генерація зображень
-				</div>
+				</h4>
 
-                <div class="service-text">
+                <div class="text">
                     Опиши ідею текстом — AI створить зображення. 
 					Потім замов друк або збережи як референс.
                 </div>
 
-                <div class="service-link">
-					Спробувати →
-				</div>
+                <a href='#' class="link">
+					Спробувати 
+					<ArrowRightIcon />
+				</a>
             </div>
 
             <div class="service-card">
-                <div class="service-num">
+                <span class="num">
 					04
+				</span>
+
+                <div class="tag">
+					AI · Допомога
 				</div>
 
-                <div class="service-tag">
-					AI · Новинка
-				</div>
+                <h4 class="title">
+					Зображення 
+					<ArrowRightIcon classes='size-4' />
+					3D модель
+				</h4>
 
-                <div class="service-title">
-					Зображення → 3D модель
-				</div>
-
-                <div class="service-text">
+                <div class="text">
                     Завантажуєш фото або згенероване зображення — отримуєш готову 
 					3D-модель для друку.
                 </div>
 
-                <div class="service-link">
-					Спробувати →
-				</div>
+                <a href='#' class="link">
+					Спробувати 
+					<ArrowRightIcon />
+				</a>
             </div>
 
         </div>
@@ -107,54 +117,63 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 1px;
 		background: var(--border);
-		margin-top: 32px;
-	}
-	.service-card {
-		background: var(--mid);
-		padding: 32px 28px;
-		position: relative;
-		overflow: hidden;
-		cursor: pointer;
-		transition: background .3s;
-	}
-	.service-card:hover {
-		background: var(--black);
-	}
-	.service-num {
-		font-family: 'Bebas Neue', sans-serif;
-		font-size: 64px;
-		color: var(--border);
-		position: absolute;
-		right: 20px;
-		top: 10px;
-		line-height: 1;
-	}
-	.service-tag {
-		font-size: 10px;
-		letter-spacing: 2px;
-		color: var(--accent);
-		font-weight: 600;
-		text-transform: uppercase;
-		margin-bottom: 12px;
-	}
-	.service-title {
-		font-size: 18px;
-		font-weight: 600;
-		margin-bottom: 10px;
-	}
-	.service-text {
-		font-size: 13px;
-		color: var(--text2);
-		line-height: 1.6;
-		max-width: 280px;
-	}
-	.service-link {
-		font-size: 12px;
-		color: var(--orange);
-		margin-top: 16px;
-		display: inline-block;
-		letter-spacing: 0.5px;
-	}
 
+		.service-card {
+			background: var(--mid);
+			padding: 2rem 1.5rem;
+			position: relative;
+			transition: background .3s;
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
 	
+			&:hover {
+				background: var(--black);
+			}
+	
+			.num {
+				font-family: var(--font-display);
+				font-size: 4rem;
+				color: var(--border);
+				position: absolute;
+				right: 20px;
+				top: 10px;
+			}
+		
+			.tag {
+				font-size: 0.75rem;
+				letter-spacing: var(--letter-spacing-title);
+				color: var(--accent-green);
+				text-transform: uppercase;
+			}
+		
+			.text {
+				color: var(--text2);
+				line-height: 1.5;
+				max-width: 280px;
+			}
+		
+			.link {
+				align-items: center;
+				color: var(--orange);
+			}
+
+			.tag,
+			.title,
+			.link {
+				font-weight: 600;
+			}
+
+			.title,
+			.link {
+				display: flex;
+				gap: 1rem;
+			}
+
+			.text,
+			.link {
+				font-size: 0.875rem;
+			}
+		}
+	}
 </style>
