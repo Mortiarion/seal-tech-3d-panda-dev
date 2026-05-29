@@ -1,10 +1,10 @@
 <script lang='ts'>
-	import SectionAi from '$lib/components/landing/SectionAi.svelte';
-	import SectionContacts from '$lib/components/landing/SectionContacts.svelte';
-	import SectionHeader from '$lib/components/landing/SectionHeader.svelte';
-	import SectionHero from '$lib/components/landing/SectionHero.svelte';
-	import SectionProblemSolution from '$lib/components/landing/SectionProblemSolution.svelte';
-	import SectionServices from '$lib/components/landing/SectionServices.svelte';
+	import SectionAi from '$lib/landing/SectionAi.svelte';
+	import SectionContacts from '$lib/landing/SectionContacts.svelte';
+	import SectionHeader from '$lib/landing/SectionHeader.svelte';
+	import SectionHero from '$lib/landing/SectionHero.svelte';
+	import SectionProblemSolution from '$lib/landing/SectionProblemSolution.svelte';
+	import SectionServices from '$lib/landing/SectionServices.svelte';
 	
 	
 </script>

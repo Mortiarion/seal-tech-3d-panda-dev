@@ -110,20 +110,6 @@
 </section>
 
 <style lang="postcss">
-	#contacts {
-		position: relative;
-		&::before {
-
-		    content: "";
-			position: absolute;
-			inset: 0;
-			background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-			background-size: 60px 60px;
-			opacity: .35;
-			pointer-events: none;
-		}
-	}
-	
 	.contact-section {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -152,6 +138,8 @@
 				display: flex;
 				gap: 1rem;
 				align-items: center;
+				background-color: var(--mid);
+				padding: 0.5rem 1rem;
 			}
 			
 		}

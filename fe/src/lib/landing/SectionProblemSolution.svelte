@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="title">
-                    Ідея є, файлу нема
+                    Ідея є, 
                 </div>
 
                 <div class="text">

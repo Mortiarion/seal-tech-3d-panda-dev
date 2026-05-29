@@ -27,6 +27,23 @@
 </section>
 
 <style lang="postcss">
+	section {
+		position: relative;
+		overflow: hidden;
+		padding-top: 182px;
+
+		&::after {
+			position: absolute;
+			content: '';
+			z-index: -1;
+			top: 0;
+			left: 40%;
+			height: 100%;
+			background-color: var(--mid);
+			clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+		}
+	}
+
 	.sub {
 		font-size: 18px;
 		max-width: 460px;

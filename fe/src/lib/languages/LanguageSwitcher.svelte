@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { clickOutside } from "../../actions/clickOutSide";
+	import { clickOutside } from "../actions/clickOutSide";
 
     let isLang = $state(false);
 

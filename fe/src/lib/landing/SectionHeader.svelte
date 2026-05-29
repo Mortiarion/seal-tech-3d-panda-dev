@@ -2,11 +2,22 @@
 	import { resolve } from "$app/paths";
 
 	import { Route } from "$lib/routing-helper";
-	import LanguageSwitcher from "$lib/components/languages/LanguageSwitcher.svelte";
-	import ThemesToggle from "$lib/components/themes/ThemesToggle.svelte";
+	import LanguageSwitcher from "$lib/languages/LanguageSwitcher.svelte";
+	import ThemesToggle from "$lib/themes/ThemesToggle.svelte";
+	import { intersectionObserver } from "$lib/actions/intersectionObserver";
+
+	let isScrolled = $state(false);
 </script>
 
-<header class="border-bottom">
+<div 
+	id="intersection-observer" 
+	use:intersectionObserver 
+	onintersect={(e) => {
+		isScrolled = !e.detail.isIntersecting;
+	}}
+></div>
+
+<header class="border-bottom" class:scrolled={ isScrolled }>
 	<div class="container">
 		<nav>
 			<a href={ resolve(Route.root) } class="logo">
@@ -52,12 +63,38 @@
 </header>
 
 <style lang="postcss">
+	#intersection-observer {
+		width: 100%;
+		height: 1px;
+		visibility: hidden;
+		opacity: 0;
+		background-color: transparent;
+	}
+
 	header {
-		position: sticky;
+		position: fixed;
 		top: 0;
+		left: 0;
+		right: 0;
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
+
+        &.scrolled {
+            & .logo img {
+                width: 80px;
+            }
+        }
+		
+		&::before {
+		    content: "";
+			position: absolute;
+			inset: 0;
+			background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+			background-size: 60px 60px;
+			opacity: .35;
+			pointer-events: none;
+		}
 		
 		> .container {
 			padding: 1.25rem ;
@@ -67,6 +104,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			
+			.logo img {
+				transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			}
 
 			.nav-links {
 				display: flex;

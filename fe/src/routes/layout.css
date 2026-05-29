@@ -48,16 +48,6 @@
 
 html {
 	scroll-behavior: smooth;
-}
-
-body {
-	background: var(--bg-body);
-	color: var(--text);
-	font-family: var(--font-body);
-	line-height: 1;
-	letter-spacing: var(--letter-spacing-text);
-	font-size: 1.125rem;
-	transition: background-color 1s, color 1s;
 
 	&[data-theme='light'] {
 		/* --bg-body: #f8f5f0; */
@@ -68,7 +58,7 @@ body {
 		/* --accent-orange2: #ff6a25; */
 		/* --success: #1d9e75; */
 		/* --border-main: #d4cdc2; */
-
+	
 		--bg-body: #f5f1e9;
 		--bg2: #ede6d9;
 		--bg3: #e4d9c4;
@@ -84,6 +74,18 @@ body {
 		--text: var(--white)
 	}
 }
+
+body {
+	background: var(--bg-body);
+	color: var(--text);
+	font-family: var(--font-body);
+	line-height: 1;
+	letter-spacing: var(--letter-spacing-text);
+	font-size: 1.125rem;
+	transition: background-color 1s, color 1s;
+
+}
+
 
 .container {
 	@apply mx-auto px-5 py-10;

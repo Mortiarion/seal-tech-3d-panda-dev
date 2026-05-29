@@ -156,6 +156,7 @@
 			.link {
 				align-items: center;
 				color: var(--orange);
+				width: fit-content;
 			}
 
 			.tag,

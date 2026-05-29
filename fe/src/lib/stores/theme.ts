@@ -1,62 +1,112 @@
-// src/lib/stores/theme.ts
-import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
+import { writable } from 'svelte/store';
 
-export enum Theme {
+export enum ETheme {
 	Light = 'light',
 	Dark = 'dark'
 }
 
 const THEME_STORAGE_KEY = 'theme';
-const THEME_ATTRIBUTE = 'data-theme';
+
+function getSystemTheme(): ETheme {
+	if (!browser) {
+		return ETheme.Dark;
+	}
+
+	return window.matchMedia('(prefers-color-scheme: dark)').matches
+		? ETheme.Dark
+		: ETheme.Light;
+}
+
+function getInitialTheme(): ETheme {
+	if (!browser) {
+		return ETheme.Dark;
+	}
+
+	const savedTheme = localStorage.getItem(
+		THEME_STORAGE_KEY
+	) as ETheme | null;
+
+	if (
+		savedTheme === ETheme.Light ||
+		savedTheme === ETheme.Dark
+	) {
+		return savedTheme;
+	}
+
+	return getSystemTheme();
+}
+
+function applyTheme(theme: ETheme) {
+	if (!browser) {
+		return;
+	}
+
+	document.documentElement.dataset.theme = theme;
+
+	localStorage.setItem(
+		THEME_STORAGE_KEY,
+		theme
+	);
+}
 
 function createThemeStore() {
-	// Визначаємо початкову тему
-	const getInitialTheme = (): Theme => {
-		if (!browser) return Theme.Light;
-
-		// 1. Перевіряємо збережену тему
-		const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
-		if (savedTheme && Object.values(Theme).includes(savedTheme)) {
-			return savedTheme;
-		}
-
-		// 2. Системна тема
-		return window.matchMedia('(prefers-color-scheme: dark)').matches 
-			? Theme.Dark 
-			: Theme.Light;
-	};
-
 	const initialTheme = getInitialTheme();
-	const { subscribe, set, update } = writable<Theme>(initialTheme);
 
-	// Функція застосування теми
-	const applyTheme = (theme: Theme) => {
-		if (!browser) return;
-		document.documentElement.setAttribute(THEME_ATTRIBUTE, theme);
-		localStorage.setItem(THEME_STORAGE_KEY, theme);
-	};
+	const {
+		subscribe,
+		set: internalSet,
+		update
+	} = writable<ETheme>(initialTheme);
 
-	// Автоматичне застосування при зміні
-	subscribe(applyTheme);
+	applyTheme(initialTheme);
+
+	if (browser) {
+		window.addEventListener(
+			'storage',
+			(event) => {
+				if (
+					event.key === THEME_STORAGE_KEY &&
+					event.newValue
+				) {
+					internalSet(event.newValue as ETheme);
+
+					applyTheme(
+						event.newValue as ETheme
+					);
+				}
+			}
+		);
+	}
 
 	return {
 		subscribe,
-		set: (theme: Theme) => {
-			if (Object.values(Theme).includes(theme)) {
-				set(theme);
-			}
+
+		set(theme: ETheme) {
+			internalSet(theme);
+
+			applyTheme(theme);
 		},
-		update,
-		toggle: () => {
-			update(current => current === Theme.Light ? Theme.Dark : Theme.Light);
+
+		toggle() {
+			update((currentTheme) => {
+				const newTheme =
+					currentTheme === ETheme.Dark
+						? ETheme.Light
+						: ETheme.Dark;
+
+				applyTheme(newTheme);
+
+				return newTheme;
+			});
 		},
-		resetToSystem: () => {
-			if (!browser) return;
-			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches 
-				? Theme.Dark 
-				: Theme.Light;
-			set(systemTheme);
+
+		resetToSystem() {
+			const systemTheme = getSystemTheme();
+
+			internalSet(systemTheme);
+
+			applyTheme(systemTheme);
 		}
 	};
 }
