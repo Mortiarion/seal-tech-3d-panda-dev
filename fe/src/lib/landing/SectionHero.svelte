@@ -30,15 +30,15 @@
 	section {
 		position: relative;
 		overflow: hidden;
-		padding-top: 182px;
 
-		&::after {
+		&::before {
 			position: absolute;
 			content: '';
 			z-index: -1;
 			top: 0;
+			bottom: 0;
 			left: 40%;
-			height: 100%;
+			right: 0%;
 			background-color: var(--mid);
 			clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 		}

@@ -64,24 +64,25 @@
 
 <style lang="postcss">
 	#intersection-observer {
+		position: absolute;
+		top: 0;
 		width: 100%;
 		height: 1px;
 		visibility: hidden;
 		opacity: 0;
 		background-color: transparent;
+		pointer-events: none;
 	}
 
 	header {
-		position: fixed;
+		position: sticky;
 		top: 0;
-		left: 0;
-		right: 0;
 		z-index: 10;
 		background: var(--header-bg-transparent);
 		backdrop-filter: var(--backdrop-filter);
 
         &.scrolled {
-            & .logo img {
+			& .logo img {
                 width: 80px;
             }
         }
